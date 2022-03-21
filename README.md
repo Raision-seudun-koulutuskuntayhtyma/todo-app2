@@ -16,6 +16,14 @@ Todo-ohjelma Djangolla
    ```sh
    pip install -r requirements.txt
    ```
+4. Alusta tietokanta
+   ```sh
+   python manage.py migrate
+   ```
+5. Luo pääkäyttäjä
+   ```sh
+   python manage.py createsuperuser
+   ```
 
 ## API
 
