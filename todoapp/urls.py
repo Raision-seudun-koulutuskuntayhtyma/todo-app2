@@ -25,6 +25,8 @@ router.register(r'tehtavat', TehtavaViewSet)
 
 urlpatterns = [
     path('', etusivu, name="etusivu"),
+    path('auth/', include('djoser.urls')),
+    path('auth/', include('djoser.urls.authtoken')),
     path('tehtava/<int:id>/', tehtava_sivu, name="tehtava"),
     path('tietoa-ohjelmasta/', tietoa, name="tietoa"),
     path('yhteystiedot/', yhteystiedot),
