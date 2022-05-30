@@ -22,10 +22,13 @@ env = environ.Env(
     SECRET_KEY=str,
     ALLOWED_HOSTS=list,
     DATABASE_URL=(str, f'sqlite:///{BASE_DIR}/db.sqlite3'),
+    STATIC_ROOT=(str, BASE_DIR / 'static'),
 )
 
 if (BASE_DIR / '.env').exists():
     env.read_env(BASE_DIR / '.env')
+
+STATIC_ROOT = env('STATIC_ROOT')
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
