@@ -24,6 +24,8 @@ env = environ.Env(
     DATABASE_URL=(str, f'sqlite:///{BASE_DIR}/db.sqlite3'),
 )
 
+if (BASE_DIR / '.env').exists():
+    env.read_env(BASE_DIR / '.env')
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
